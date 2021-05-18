@@ -22,10 +22,19 @@ class Home extends BaseController
 	{
 		$users = $this->Users_model->getUsers();
 		$surat = $this->Surat_model->getSurat();
+		$surat_belum_ttd = $this->Surat_model->where('status', 1)->findAll();
+		$surat_ttd = $this->Surat_model->where('status', 2)->findAll();
+		// $surat_belum_ttd = $this->Surat_model->getSuratBelumTTD();
+		// $surat_ttd = $this->Surat_model->getSuratTTD();
+
+
+
 
 		$data = [
 			'count_users' => count($users),
-			'count_surat' => count($surat)
+			'count_surat' => count($surat),
+			'count_surat_belum_ttd' => count($surat_belum_ttd),
+			'count_surat_ttd' => count($surat_ttd)
 		];
 
 		return view('home', $data);

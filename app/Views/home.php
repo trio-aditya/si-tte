@@ -78,7 +78,7 @@
                                 <div class="row">
                                     <div class="col">
                                         <h5 class="card-title text-uppercase text-muted mb-0">Surat Belum TTD</h5>
-                                        <span class="h2 font-weight-bold mb-0"><?= $count_surat; ?></span>
+                                        <span class="h2 font-weight-bold mb-0"><?= $count_surat_belum_ttd; ?></span>
                                     </div>
                                     <div class="col-auto">
                                         <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
@@ -97,7 +97,7 @@
                                 <div class="row">
                                     <div class="col">
                                         <h5 class="card-title text-uppercase text-muted mb-0">Surat di TTD</h5>
-                                        <span class="h2 font-weight-bold mb-0"><?= $count_surat; ?></span>
+                                        <span class="h2 font-weight-bold mb-0"><?= $count_surat_ttd; ?></span>
                                     </div>
                                     <div class="col-auto">
                                         <div class="icon icon-shape bg-gradient-info text-white rounded-circle shadow">
