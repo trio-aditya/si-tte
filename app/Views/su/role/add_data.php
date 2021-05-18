@@ -47,13 +47,11 @@
                                 <?= csrf_field() ?>
                                 <div class="pl-lg-4">
                                     <div class="row">
-                                        <div class="col-lg-12">
+                                        <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label class="form-control-label">Role</label>
                                                 <input type="text" class="form-control" name="role" placeholder="Masukkan Role" required>
                                             </div>
-                                        </div>
-                                        <div class="col-lg-12">
                                             <div class="form-group">
                                                 <div class="text-right">
                                                     <button type="submit" class="btn btn-primary mt-4">Tambah Data</button>

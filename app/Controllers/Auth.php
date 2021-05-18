@@ -23,15 +23,18 @@ class Auth extends BaseController
         $cek = $muser->get_data($username);
 
         if (($cek['username'] == $username)) {
-            session()->set('username', $cek['username']);
-            session()->set('password', $cek['password']);
-            session()->set('role_id', $cek['role_id']);
-            session()->set('nama_lengkap', $cek['nama_lengkap']);
-            session()->set('nip', $cek['nip']);
-            session()->set('golongan', $cek['golongan']);
-            session()->set('foto', $cek['foto']);
 
             if (password_verify($password, $cek['password'])) {
+                session()->set('username', $cek['username']);
+                session()->set('password', $cek['password']);
+                session()->set('role_id', $cek['role_id']);
+                session()->set('nama_lengkap', $cek['nama_lengkap']);
+                session()->set('nip', $cek['nip']);
+                session()->set('golongan', $cek['golongan']);
+                session()->set('foto', $cek['foto']);
+
+                session()->set('login', true);
+
                 return redirect()->to(base_url('home'));
             } else {
                 session()->setFlashdata('gagal', 'Password salah!');

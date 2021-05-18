@@ -46,37 +46,27 @@
                                 <?= csrf_field() ?>
                                 <div class="pl-lg-4">
                                     <div class="row">
-                                        <div class="col-lg-12">
+                                        <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label class="form-control-label">Username</label>
                                                 <input type="text" class="form-control" name="username" placeholder="Masukkan Username" required>
                                             </div>
-                                        </div>
-                                        <div class="col-lg-12">
                                             <div class="form-group">
                                                 <label class="form-control-label">Password</label>
                                                 <input type="password" class="form-control" name="password" placeholder="Masukkan Password" required>
                                             </div>
-                                        </div>
-                                        <div class="col-lg-12">
                                             <div class="form-group">
                                                 <label class="form-control-label">Nama Lengkap</label>
                                                 <input type="text" class="form-control" name="nama_lengkap" placeholder="Masukkan Nama Lengkap" required>
                                             </div>
-                                        </div>
-                                        <div class="col-lg-12">
                                             <div class="form-group">
                                                 <label class="form-control-label">NIP</label>
                                                 <input type="text" class="form-control" name="nip" placeholder="Masukkan NIP">
                                             </div>
-                                        </div>
-                                        <div class="col-lg-12">
                                             <div class="form-group">
                                                 <label class="form-control-label">Golongan</label>
                                                 <input type="text" class="form-control" name="golongan" placeholder="Masukkan Golongan">
                                             </div>
-                                        </div>
-                                        <div class="col-lg-12">
                                             <div class="form-group">
                                                 <label class="form-control-label">Pilih Role</label>
                                                 <select class="form-control" name="role_id">
@@ -85,8 +75,6 @@
                                                     <?php endforeach; ?>
                                                 </select>
                                             </div>
-                                        </div>
-                                        <div class="col-lg-12">
                                             <div class="form-group">
                                                 <div class="text-right">
                                                     <button type="submit" class="btn btn-primary mt-4">Tambah Data</button>

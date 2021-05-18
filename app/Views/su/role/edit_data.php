@@ -48,13 +48,11 @@
                                 <div class="pl-lg-4">
                                     <div class="row">
                                         <input type="hidden" class="form-control" name="id_role" placeholder="Masukkan Role" value="<?= $role['id_role']; ?>">
-                                        <div class="col-lg-12">
+                                        <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label class="form-control-label">Role</label>
                                                 <input type="text" class="form-control" name="role" placeholder="Masukkan Role" value="<?= $role['role']; ?>" required>
                                             </div>
-                                        </div>
-                                        <div class="col-lg-12">
                                             <div class="form-group">
                                                 <div class="text-right">
                                                     <button type="submit" class="btn btn-primary mt-4">Edit Data</button>

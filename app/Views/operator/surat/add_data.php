@@ -46,7 +46,7 @@
                                 <?= csrf_field() ?>
                                 <div class="pl-lg-4">
                                     <div class="row">
-                                        <div class="col-lg-12">
+                                        <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label class="form-control-label">Upload Surat</label>
                                                 <div class="custom-file">
@@ -57,11 +57,9 @@
                                                     <label class="custom-file-label" for="customFileLang">Pilih Surat</label>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="col-lg-12">
                                             <div class="form-group">
                                                 <div class="text-right">
-                                                    <button type="submit" class="btn btn-primary mt-4">Tambah Data</button>
+                                                    <button type="submit" class="btn btn-primary mt-4">Upload Dokumen</button>
                                                 </div>
                                             </div>
                                         </div>
