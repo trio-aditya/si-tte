@@ -25,6 +25,7 @@ class Auth extends BaseController
         if (($cek['username'] == $username)) {
 
             if (password_verify($password, $cek['password'])) {
+                session()->set('id_user', $cek['id_user']);
                 session()->set('username', $cek['username']);
                 session()->set('password', $cek['password']);
                 session()->set('role_id', $cek['role_id']);
@@ -41,7 +42,7 @@ class Auth extends BaseController
                 return redirect()->to(base_url('auth'));
             }
         } else {
-            session()->setFlashdata('gagal', 'Usernamesalah!');
+            session()->setFlashdata('gagal', 'Username salah!');
             return redirect()->to(base_url('auth'));
         }
     }

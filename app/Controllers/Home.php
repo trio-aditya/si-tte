@@ -2,28 +2,32 @@
 
 namespace App\Controllers;
 
+use App\Models\Users_model;
+use App\Models\Surat_model;
+
 class Home extends BaseController
 {
 
+	protected $Users_model;
+	protected $Surat_model;
+
 	public function __construct()
 	{
-		if (empty(session()->get('username'))) {
-			return redirect()->to('/auth');
-		}
+		$this->Users_model = new Users_model;
+		$this->Surat_model = new Surat_model;
 	}
 
 
 	public function index()
 	{
-		return view('home');
-	}
+		$users = $this->Users_model->getUsers();
+		$surat = $this->Surat_model->getSurat();
 
-	//Cek Login
-	public function cek_status()
-	{
-		if (session()->get('id_user') == NULL) {
-			session()->setFlashdata('error_login', 'Silahkan login terlebih dahulu untuk mengakses data.');
-			return redirect()->to('/auth');
-		}
+		$data = [
+			'count_users' => count($users),
+			'count_surat' => count($surat)
+		];
+
+		return view('home', $data);
 	}
 }
