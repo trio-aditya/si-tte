@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 17 Bulan Mei 2021 pada 06.00
+-- Waktu pembuatan: 18 Bulan Mei 2021 pada 10.14
 -- Versi server: 10.4.18-MariaDB
 -- Versi PHP: 7.3.27
 
@@ -53,6 +53,13 @@ CREATE TABLE `surat` (
   `waktu_upload` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `status` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `surat`
+--
+
+INSERT INTO `surat` (`id_surat`, `surat`, `waktu_upload`, `status`) VALUES
+(1, 'DAFTAR PUSTAKA.pdf', '2021-05-18 03:34:15', 2);
 
 -- --------------------------------------------------------
 
@@ -120,7 +127,7 @@ ALTER TABLE `role`
 -- AUTO_INCREMENT untuk tabel `surat`
 --
 ALTER TABLE `surat`
-  MODIFY `id_surat` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_surat` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
