@@ -51,6 +51,8 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
+                                        <th>Judul</th>
+                                        <th>Nomor</th>
                                         <th>Surat</th>
                                         <th>Waktu Upload</th>
                                         <th>Status</th>
@@ -62,8 +64,10 @@
                                     <?php foreach ($surat as $value) : ?>
                                         <tr>
                                             <td><?= $no++ ?></td>
+                                            <td><?= $value['judul_dokumen']; ?></td>
+                                            <td><?= $value['nomor_dokumen']; ?></td>
                                             <td><?= $value['surat']; ?></td>
-                                            <td><?= $value['waktu_upload']; ?></td>
+                                            <td><?= $value['tanggal_dokumen']; ?></td>
                                             <?php if ($value['status'] == 1) {
                                                 echo '<td><span class="badge badge-pill badge-warning">Sedang Proses</span></td>';
                                             } else {
@@ -82,15 +86,6 @@
                                         </tr>
                                     <?php endforeach; ?>
                                 </tbody>
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Surat</th>
-                                        <th>Waktu Upload</th>
-                                        <th>Status</th>
-                                        <th>Aksi</th>
-                                    </tr>
-                                </thead>
                             </table>
                         </div>
                     </div>

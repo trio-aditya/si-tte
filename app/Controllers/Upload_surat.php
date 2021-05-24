@@ -66,7 +66,14 @@ class Upload_surat extends BaseController
 
 		$this->Upload_surat_model->save([
 			'user_id' => $this->request->getPost('user_id'),
+			'judul_dokumen' => $this->request->getVar('judul_dokumen'),
+			'tanggal_dokumen' => $this->request->getVar('tanggal_dokumen'),
+			'nomor_dokumen' => $this->request->getVar('nomor_dokumen'),
+			'posisi_tte' => $this->request->getVar('posisi_tte'),
+			'nilai_x' => $this->request->getVar('nilai_x'),
+			'nilai_y' => $this->request->getVar('nilai_y'),
 			'surat' => $namaSurat,
+			'tampil' => $this->request->getPost('tampil'),
 			'waktu_upload' => date('Y-m-d H:i:s'),
 			'status' => 1,
 		]);

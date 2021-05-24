@@ -32,7 +32,7 @@
                         <div class="card-header">
                             <div class="row align-items-center">
                                 <div class="col-8">
-                                    <h3 class="mb-0">Form Upload Surat</h3>
+                                    <h3 class="mb-0">Form Upload Dokumen</h3>
                                 </div>
                                 <div class="col-4 text-right">
                                     <a href="<?= base_url('/upload_surat'); ?>" class="btn btn-sm btn-primary"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Kembali</a>
@@ -48,13 +48,61 @@
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="form-group">
-                                                <label class="form-control-label">Upload Surat</label>
+                                                <label class="form-control-label">Judul Dokumen</label>
+                                                <input type="text" class="form-control" id="judul_dokumen" name="judul_dokumen" placeholder="Masukkan Judul Dokumen" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="form-control-label">Tanggal Dokumen</label>
+                                                <input type="date" class="form-control" name="tanggal_dokumen" placeholder="Masukkan Tanggal Dokumen" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="form-control-label">Nomor Dokumen</label>
+                                                <input type="text" class="form-control" name="nomor_dokumen" placeholder="Masukkan Nomor Dokumen" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="form-control-label">Posisi TTE</label>
+                                                <select class="form-control" name="posisi_tte">
+                                                    <option value="1">Atas</option>
+                                                    <option value="2">Bawah</option>
+                                                    <option value="3">Tengah</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="form-control-label">Input Posisi X dan Y</label>
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <input type="text" class="form-control" name="nilai_x" placeholder="Masukkan Nilai X" required>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <input type="text" class="form-control" name="nilai_y" placeholder="Masukkan Nilai Y" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="form-control-label">Upload Dokumen</label>
                                                 <div class="custom-file">
                                                     <input type="file" id="surat" class="custom-file-input <?= ($validation->hasError('surat')) ? 'is-invalid' : ''; ?>" name="surat" lang="en">
                                                     <div class="invalid-feedback">
                                                         <?= $validation->getError('surat'); ?>
                                                     </div>
-                                                    <label class="custom-file-label" for="customFileLang">Pilih Surat</label>
+                                                    <label class="custom-file-label">Pilih Dokumen</label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-3">
+                                                    <div class="custom-control custom-radio mb-3">
+                                                        <input type="radio" id="customRadio1" name="tampil" value="1" class="custom-control-input">
+                                                        <label class="custom-control-label" for="customRadio1">Tampil Publik</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-1">
+                                                    <label class="form-control-label">/</label>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <div class="custom-control custom-radio">
+                                                        <input type="radio" id="customRadio2" name="tampil" value="0" class="custom-control-input">
+                                                        <label class="custom-control-label" for="customRadio2">Jangan Publik</label>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="form-group">

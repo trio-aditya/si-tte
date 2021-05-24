@@ -26,30 +26,25 @@
         <div class="col-lg-5 col-md-7">
             <div class="card bg-secondary border border-soft mb-0">
                 <div class="card-header bg-transparent pb-5">
-                    <div class="text-center mt-2 mb-3"><small>Sign in with</small></div>
+                    <div class="text-center mt-2 mb-3"><small></small></div>
                     <div class="btn-wrapper text-center">
-                        <a href="#" class="btn btn-neutral btn-icon">
-                            <span class="btn-inner--icon"><img src="<?= base_url(); ?>/assets/img/icons/common/github.svg"></span>
-                            <span class="btn-inner--text">Github</span>
-                        </a>
-                        <a href="#" class="btn btn-neutral btn-icon">
+                        <!-- <a href="#" class="btn btn-neutral btn-icon">
+                            <span class="rounded" width="10%"><img src="<?= base_url(); ?>/assets/img/logo.png"></span>
+                        </a> -->
+                        <!-- <a href="#" class="btn btn-neutral btn-icon">
                             <span class="btn-inner--icon"><img src="<?= base_url(); ?>/assets/img/icons/common/google.svg"></span>
                             <span class="btn-inner--text">Google</span>
-                        </a>
+                        </a> -->
+                        <img src="<?= base_url(); ?>/assets/img/logo.png" class="img-" width="100px" alt="...">
                     </div><br>
-                    <p>
-                        <?php if (!empty(session()->getFlashdata('gagal'))) { ?>
-                    <div class="alert alert-warning" role="alert">
-                        <h4 class="alert-heading"></h4>
-                        <p class="mb-0"><?= session()->getFlashdata('gagal'); ?></p>
-                    </div>
-                <?php } ?>
-                </p>
+                    <?php if (!empty(session()->getFlashdata('gagal'))) { ?>
+                        <div class="alert alert-warning" role="alert">
+                            <h4 class="alert-heading"></h4>
+                            <p class="mb-0"><?= session()->getFlashdata('gagal'); ?></p>
+                        </div>
+                    <?php } ?>
                 </div>
                 <div class="card-body px-lg-5 py-lg-5">
-                    <div class="text-center mb-4">
-                        <small>Or sign in with credentials</small>
-                    </div>
                     <form action="<?= base_url('auth/proses_login'); ?>" method="post" role="form">
                         <?= csrf_field() ?>
                         <div class="form-group mb-3">
