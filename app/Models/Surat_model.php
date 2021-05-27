@@ -14,7 +14,8 @@ class Surat_model extends Model
     public function getSurat($id = false)
     {
         if ($id == false) {
-            return $this->findAll();
+            // $builder->orderBy('title', 'DESC');
+            return $this->orderBy('id_surat', 'DESC')->findAll();
         }
 
         return $this->where(['id_surat' => $id])->first();

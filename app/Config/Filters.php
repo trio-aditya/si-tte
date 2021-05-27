@@ -44,6 +44,7 @@ class Filters extends BaseConfig
 					'home', 'home/*',
 					'role', 'role/*',
 					'surat', 'surat/*',
+					'dokumen', 'dokumen/*',
 					'upload_surat', 'upload_surat/*',
 					'users', 'users/*',
 				]
