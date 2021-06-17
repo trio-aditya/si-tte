@@ -36,6 +36,7 @@
                             <span class="btn-inner--text">Google</span>
                         </a> -->
                         <img src="<?= base_url(); ?>/assets/img/logo.png" class="img-" width="100px" alt="...">
+                        <img src="<?= base_url(); ?>/assets/img/logo-bsre.png" class="img-" width="250px" alt="...">
                     </div><br>
                     <?php if (!empty(session()->getFlashdata('gagal'))) { ?>
                         <div class="alert alert-warning" role="alert">
