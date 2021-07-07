@@ -127,21 +127,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 </div>
                 <div class="col-xl-6">
                     <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a href="#" class="nav-link" target="_blank">Creative Tim</a>
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link" target="_blank">Themesberg</a>
-                        </li>
+                        </li> -->
                         <li class="nav-item">
                             <a href="##" class="nav-link" target="_blank">About Us</a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a href="#" class="nav-link" target="_blank">Blog</a>
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link" target="_blank">License</a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </div>

@@ -34,9 +34,20 @@ class Home extends BaseController
 			'count_users' => count($users),
 			'count_surat' => count($surat),
 			'count_surat_belum_ttd' => count($surat_belum_ttd),
-			'count_surat_ttd' => count($surat_ttd)
+			'count_surat_ttd' => count($surat_ttd),
+			'surat' => $surat_belum_ttd
 		];
 
 		return view('home', $data);
+	}
+
+	public function get_tot()
+	{
+		$surat_belum_ttd = $this->Surat_model->where('status', 1)->findAll();
+
+		$tot = count($surat_belum_ttd);
+		$result['tot'] = $tot;
+		$result['msg'] = "Berhasil direfresh secara realtime";
+		echo json_encode($result);
 	}
 }

@@ -19,8 +19,11 @@ class Surat extends BaseController
 	public function index()
 	{
 
+		$surat_belum_ttd = $this->Surat_model->where('status', 1)->findAll();
+
 		$data = [
-			'surat' => $this->Surat_model->getSurat()
+			'surat' => $this->Surat_model->getSurat(),
+			'count_surat_belum_ttd' => count($surat_belum_ttd)
 		];
 
 		return view('kepala/surat/home', $data);
@@ -45,5 +48,16 @@ class Surat extends BaseController
 		$surat = $this->Surat_model->getSurat($id);
 
 		return $this->response->download('upload/' . $surat['surat'], null);
+	}
+
+	//Notifikasi
+	public function get_tot()
+	{
+		$surat_belum_ttd = $this->Surat_model->where('status', 1)->findAll();
+
+		$tot = count($surat_belum_ttd);
+		$result['tot'] = $tot;
+		$result['msg'] = "Berhasil direfresh secara realtime";
+		echo json_encode($result);
 	}
 }

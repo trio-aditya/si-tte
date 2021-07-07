@@ -13,10 +13,14 @@ class Upload_surat_model extends Model
 
     public function getSurat($id = false)
     {
+
         if ($id == false) {
             return $this->orderBy('id_surat', 'DESC')->findAll();
         }
 
         return $this->where(['id_surat' => $id])->first();
+
+        $data['message'] = 'hello world';
+        $pusher->trigger('my-channel', 'my-event', $data);
     }
 }

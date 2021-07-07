@@ -9,42 +9,104 @@
                         <i class="ni ni-zoom-split-in"></i>
                     </a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="ni ni-bell-55"></i>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-xl  dropdown-menu-right  py-0 overflow-hidden">
-                        <!-- Dropdown header -->
-                        <div class="px-3 py-3">
-                            <h6 class="text-sm text-muted m-0">You have <strong class="text-primary">1</strong> notifications.</h6>
-                        </div>
-                        <!-- List group -->
-                        <div class="list-group list-group-flush">
-                            <a href="#!" class="list-group-item list-group-item-action">
-                                <div class="row align-items-center">
-                                    <div class="col-auto">
-                                        <!-- Avatar -->
-                                        <img alt="Image placeholder" src="<?= base_url(); ?>/assets/img/theme/team-1.jpg" class="avatar rounded-circle">
-                                    </div>
-                                    <div class="col ml--2">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <div>
-                                                <h4 class="mb-0 text-sm">John Snow</h4>
-                                            </div>
-                                            <div class="text-right text-muted">
-                                                <small>2 hrs ago</small>
-                                            </div>
+                <?php if (session()->get('role_id') != 3) : ?>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="ni ni-bell-55"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-xl  dropdown-menu-right  py-0 overflow-hidden">
+                            <!-- Dropdown header -->
+                            <div class="px-3 py-3">
+                                <h6 class="text-sm text-muted m-0">Anda memiliki <strong class="text-primary">1</strong> notifikasi.</h6>
+                            </div>
+                            <!-- List group -->
+                            <div class="list-group list-group-flush">
+                                <a href="#!" class="list-group-item list-group-item-action">
+                                    <div class="row align-items-center">
+                                        <div class="col-auto">
+                                            <!-- Avatar -->
+                                            <img alt="Image placeholder" src="<?= base_url(); ?>/assets/img/theme/team-1.jpg" class="avatar rounded-circle">
                                         </div>
-                                        <p class="text-sm mb-0">Let's meet at Starbucks at 11:30. Wdyt?</p>
+                                        <div class="col ml--2">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <h4 class="mb-0 text-sm">John Snow</h4>
+                                                </div>
+                                                <div class="text-right text-muted">
+                                                    <small>2 hrs ago</small>
+                                                </div>
+                                            </div>
+                                            <p class="text-sm mb-0">Let's meet at Starbucks at 11:30. Wdyt?</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- View all -->
+                            <a href="#!" class="dropdown-item text-center text-primary font-weight-bold py-3">View all</a>
+                        </div>
+                    </li>
+                <?php endif; ?>
+                <?php if (session()->get('role_id') == 3) : ?>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="ni ni-bell-55">
+                                <span class="badge badge-warning text-wrap" id="tot-dok"><?= $count_surat_belum_ttd; ?></span>
+                            </i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-xl  dropdown-menu-right  py-0 overflow-hidden">
+                            <!-- Dropdown header -->
+                            <div class="px-3 py-3">
+                                <h6 class="text-sm text-muted m-0">Anda memiliki <strong class="text-primary"><?= $count_surat_belum_ttd; ?></strong> notifikasi.</h6>
+                            </div>
+                            <!-- List group -->
+                            <div class="list-group list-group-flush">
+                                <!-- <a href="#" class="list-group-item list-group-item-action"> -->
+                                <div class="row align-items-center">
+                                    <!-- <div class="col-auto">
+                                            <img alt="Image placeholder" src="<?= base_url(); ?>/assets/img/theme/team-1.jpg" class="avatar rounded-circle">
+                                        </div> -->
+                                    <div class="col ml--2">
+                                        <?php foreach ($surat as $value) : ?>
+                                            <a href="<?= base_url('/surat/download/' . $value['id_surat']); ?>" class="list-group-item">
+                                                <?php
+                                                $awal = date_create($value['tanggal_dokumen']);
+                                                $akhir = date_create(); // waktu sekarang
+                                                $diff = date_diff($awal, $akhir);
+
+                                                // echo 'Selisih waktu: ';
+                                                // echo $diff->y . ' tahun, ';
+                                                // echo $diff->m . ' bulan, ';
+                                                // echo $diff->d . ' hari, ';
+                                                // echo $diff->h . ' jam, ';
+                                                // echo $diff->i . ' menit, ';
+                                                // echo $diff->s . ' detik, ';
+                                                // Output: Selisih waktu: 28 tahun, 5 bulan, 9 hari, 13 jam, 7 menit, 7 detik
+
+                                                //echo 'Total selisih hari : ' . $diff->days;
+                                                ?>
+                                                <?php if ($value['status'] == 1) : ?>
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div>
+                                                            <h4 class="mb-0 text-sm"><?= $value['judul_dokumen']; ?></h4>
+                                                        </div>
+                                                        <div class="text-right text-muted">
+                                                            <small><?= $diff->days ?> hari lalu</small>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text-sm mb-0"><?= $value['nomor_dokumen']; ?></p>
+                                                <?php endif; ?>
+                                            <?php endforeach; ?>
+                                            </a>
                                     </div>
                                 </div>
-                            </a>
+                                <!-- </a> -->
+                            </div>
+                            <!-- View all -->
+                            <!-- <a href="#!" class="dropdown-item text-center text-primary font-weight-bold py-3">View all</a> -->
                         </div>
-                        <!-- View all -->
-                        <a href="#!" class="dropdown-item text-center text-primary font-weight-bold py-3">View all</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
+                    </li>
+                <?php endif; ?>
+                <!-- <li class="nav-item dropdown">
                     <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="ni ni-ungroup"></i>
                     </a>
@@ -58,7 +120,7 @@
                             </a>
                         </div>
                     </div>
-                </li>
+                </li> -->
             </ul>
             <ul class="navbar-nav align-items-center  ml-auto ml-md-0 ">
                 <li class="nav-item dropdown">

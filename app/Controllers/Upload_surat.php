@@ -78,8 +78,6 @@ class Upload_surat extends BaseController
 			'status' => 1,
 		]);
 
-		session()->setFlashdata('pesan', 'Data berhasil ditambahkan!');
-
 		return redirect()->to('/upload_surat');
 	}
 

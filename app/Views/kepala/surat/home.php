@@ -2,9 +2,10 @@
 
 <?= $this->section('content'); ?>
 
+
 <body>
     <!-- Main content -->
-    <div class="main-content" id="panel">
+    <div class="main-content">
         <!-- Header -->
         <div class="header bg-primary pb-6">
             <div class="container-fluid">
@@ -43,7 +44,7 @@
                             <?php endif; ?>
                         </div>
                         <!-- Light table -->
-                        <div class="table-responsive">
+                        <div id="load_content" class="table-responsive">
                             <table id="table_id" class="table align-items-center table-flush">
                                 <thead>
                                     <tr>
@@ -92,4 +93,5 @@
             </div>
         </div>
     </div>
+
     <?= $this->endSection(); ?>

@@ -19,6 +19,7 @@
 <html>
 
 <head>
+    <!-- <meta http-equiv="refresh" content="2" /> -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
@@ -120,30 +121,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <!-- Start Top Navbar -->
             <?= $this->include('templates/topnav'); ?>
             <!-- End Top Navbar -->
-
             <!-- Page content -->
             <?= $this->renderSection('content'); ?>
+
         </div>
-    </div>
 
-    <!-- Start Footer -->
-    <?= $this->include('templates/footer'); ?>
-    <!-- End Footer -->
+        <!-- Start Footer -->
+        <!-- End Footer -->
 
+        <!-- Argon Scripts -->
+        <!-- Core -->
+        <script src="<?= base_url(); ?>/assets/vendor/jquery/dist/jquery.min.js"></script>
+        <script src="<?= base_url(); ?>/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="<?= base_url(); ?>/assets/vendor/js-cookie/js.cookie.js"></script>
+        <script src="<?= base_url(); ?>/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
+        <script src="<?= base_url(); ?>/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
+        <!-- Argon JS -->
+        <script src="<?= base_url(); ?>/assets/js/dashboard.js?v=1.2.0"></script>
+        <!-- Demo JS - remove this in your project -->
+        <script src="<?= base_url(); ?>/assets/js/demo.min.js"></script>
+        <!-- DataTables -->
+        <script src="<?= base_url(); ?>/assets/DataTables/datatables.js"></script>
+        <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script> -->
+        <!-- Reload otomatis -->
 
-    <!-- Argon Scripts -->
-    <!-- Core -->
-    <script src="<?= base_url(); ?>/assets/vendor/jquery/dist/jquery.min.js"></script>
-    <script src="<?= base_url(); ?>/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="<?= base_url(); ?>/assets/vendor/js-cookie/js.cookie.js"></script>
-    <script src="<?= base_url(); ?>/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
-    <script src="<?= base_url(); ?>/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
-    <!-- Argon JS -->
-    <script src="<?= base_url(); ?>/assets/js/dashboard.js?v=1.2.0"></script>
-    <!-- Demo JS - remove this in your project -->
-    <script src="<?= base_url(); ?>/assets/js/demo.min.js"></script>
-    <!-- DataTables -->
-    <script src="<?= base_url(); ?>/assets/DataTables/datatables.js"></script>
 </body>
 
 </html>

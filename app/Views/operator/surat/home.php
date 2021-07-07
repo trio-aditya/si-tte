@@ -94,3 +94,12 @@
         </div>
     </div>
     <?= $this->endSection(); ?>
+
+    <script type="text/javascript">
+        var otomatis = setInterval(
+            function() {
+                $.ajax({
+                    url: "<?= base_url() ?>upload_surat",
+                });
+            }, 1000);
+    </script>
